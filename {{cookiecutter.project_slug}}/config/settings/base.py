@@ -11,7 +11,7 @@ env = environ.Env()
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
 # Language and timezone
-TIME_ZONE = 'Europe/Madrid'
+TIME_ZONE = 'America/Santiago'
 LANGUAGE_CODE = 'es'
 SITE_ID = 1
 USE_I18N = True
@@ -44,6 +44,7 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    'widget_tweaks',
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters',
