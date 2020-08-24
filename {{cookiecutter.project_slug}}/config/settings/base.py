@@ -45,10 +45,10 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     'widget_tweaks',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'django_filters',
-    'corsheaders',
+    #'rest_framework',
+    #'rest_framework.authtoken',
+    #'django_filters',
+    #'corsheaders',
 ]
 LOCAL_APPS = [
     '{{cookiecutter.project_slug}}.users.apps.UsersAppConfig',
@@ -83,7 +83,7 @@ AUTH_PASSWORD_VALIDATORS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    #'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -150,28 +150,28 @@ ADMINS = [
 MANAGERS = ADMINS
 
 # Celery
-INSTALLED_APPS += ['{{cookiecutter.project_slug}}.taskapp.celery.CeleryAppConfig']
-if USE_TZ:
-    CELERY_TIMEZONE = TIME_ZONE
-CELERY_BROKER_URL = env('CELERY_BROKER_URL')
-CELERY_RESULT_BACKEND = CELERY_BROKER_URL
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERYD_TASK_TIME_LIMIT = 5 * 60
-CELERYD_TASK_SOFT_TIME_LIMIT = 60
+#INSTALLED_APPS += ['{{cookiecutter.project_slug}}.taskapp.celery.CeleryAppConfig']
+#if USE_TZ:
+#    CELERY_TIMEZONE = TIME_ZONE
+#CELERY_BROKER_URL = env('CELERY_BROKER_URL')
+#CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+#CELERY_ACCEPT_CONTENT = ['json']
+#CELERY_TASK_SERIALIZER = 'json'
+#CELERY_RESULT_SERIALIZER = 'json'
+#CELERYD_TASK_TIME_LIMIT = 5 * 60
+#CELERYD_TASK_SOFT_TIME_LIMIT = 60
 
 # Django REST Framework
-REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10,
-}
+#REST_FRAMEWORK = {
+#    'DEFAULT_RENDERER_CLASSES': (
+#        'rest_framework.renderers.JSONRenderer',
+#    ),
+#    'DEFAULT_AUTHENTICATION_CLASSES': (
+#        'rest_framework.authentication.TokenAuthentication',
+#    ),
+#    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+#    'PAGE_SIZE': 10,
+#}
 
 # Django CROS
-CORS_ORIGIN_WHITELIST = env.list('DJANGO_CORS_ORIGIN', default=[])
+#CORS_ORIGIN_WHITELIST = env.list('DJANGO_CORS_ORIGIN', default=[])
